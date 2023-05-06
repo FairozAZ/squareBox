@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square Box Animation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .spinner-box {
+            width: 600px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #19393e;
+            border-radius: 3px;
+            margin: 50px auto;
+        }
+
+        .configure-border {
+            width: 200px;
+            height: 200px;
+            padding: 5px;
+            position: absolute;
+        }
+
+        .configure-border-1{
+            background: rgb(251, 49, 210);
+            animation: configure-clockwise 3s ease-in-out infinite alternate;
+        }
+
+        .configure-border-2{
+            background: rgb(142, 255, 238);
+            animation: configure-xclockwise 3s ease-in-out infinite alternate;
+        }
+        
+        .configure-core {
+            width: 100%;
+            height: 100%;
+            background-color: #19393ef7;
+        }
+
+        @keyframes configure-clockwise {
+            0% {transform: rotate(0);}
+            25% {transform: rotate(90deg);}
+            50% {transform: rotate(180deg);}
+            75% {transform: rotate(270deg);}
+            100% {transform: rotate(360deg);}
+        }
+  
+        @keyframes configure-xclockwise {
+            0% {transform: rotate(45deg);}
+            25% {transform: rotate(-45deg);}
+            50% {transform: rotate(-135deg);}
+            75% {transform: rotate(-225deg);}
+            100% {transform: rotate(-315deg);}
+        }
+    </style>
+</head>
+<body>
+    <div class="spinner-box">
+        <div class="configure-border configure-border-1">  
+          <div class="configure-core"></div>
+        </div>  
+        <div class="configure-border configure-border-2">
+          <div class="configure-core"></div>
+        </div> 
+      </div>
+</body>
+</html>
